@@ -1,0 +1,15 @@
+Windows 10
+NW8C4-R37VK-P3WVW-PX6W7-FJRBY
+VMWare
+55012-J135N-N81DE-009KM-24ZJJ
+
+Let er op welke libraries je gebruikt.
+Gebruik libraries die goed worden onderhouden
+Download van een betrouwbare source
+Je kunt gebeurtenissen die je kunt auditen loggen. Denk hierbij aan:
+Afgekeurde logins
+Transacties die een hoge waarde vertegenwoordigen
+Je applicatie logt fouten en/of waarschuwingen.
+Je applicatie kan verdachte activiteit waarnemen en loggen
+
+

